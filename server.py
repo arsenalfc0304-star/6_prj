@@ -48,6 +48,8 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
+        with open('04_contacts.html', 'r', encoding='utf-8') as file:
+            page_content = file.read()
         self.wfile.write(bytes(page_content, "utf-8"))
 
 
